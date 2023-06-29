@@ -1,20 +1,22 @@
-import express from 'express';
+import express, { Request, Response} from 'express';
+
+
 
 const app = express();
 
 /** Routing: Enrrutamiento */
 // http://localhost:3000/
-app.get('/', (req, res) => {
-    const message = 'Bienvenido a la API de Ecommerce';
+app.get('/', (req: Request, res:Response) => {
+    const message: string = 'Bienvenido a la API de Ecommerce';
 
     console.log(message);
     res.send(`<h1>${message}</h1>`);
 });
 
 
-// http://localhost:3000/home
-app.get('/home',(req, res) => {
-    const namePage = 'Home'
+// http://localhost:3000/home (Endpoint)
+app.get('/home',(req: Request, res: Response) => {
+    const namePage: string = 'Home'
 
     console.log(namePage);
     res.send(`<h1>${namePage}</h1>`);
