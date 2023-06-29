@@ -22,7 +22,10 @@ app.get('/home',(req: Request, res: Response) => {
     res.send(`<h1>${namePage}</h1>`);
 });
 
-app.use('/', routeMain);
+/** Middleware */
+app.use('/api', routeMain);
+
+
 // app.use('/', routeAuth);
 
 app.listen(3000, () => {
